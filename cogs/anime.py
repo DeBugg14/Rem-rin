@@ -60,6 +60,107 @@ class Anime(commands.Cog):
         if isinstance(error, commands.MissingRequiredArgument):
             pass
     
+
+    # waifu search
+    @commands.command(name='waifu')
+    async def waifu_search(self,ctx,*,query):
+        """use to search waifus
+
+            available query to use-
+            1)random1 - returns random waifu in png
+            2)random gif - returns random waifu in gif
+            3)random2 - returns random waifu in png
+            4)cuddle - returns random cuddle in gif
+            5)hug - returns random hug in gif
+            6)kiss - returns random kiss in gif
+            7)lick - returns random lick in gif
+            8)pat - returns random pat in gif
+            9)smug - returns random smug in gif
+            10)bonk - returns random bonk in gif
+            11)yeet - returns random yeet in gif
+            12)blush - returns random blush in gif
+            13)highfive - returns random highfive in gif
+            14)handhold - returns random handhold in gif
+            15)bite - returns random bite in gif
+            16)slap - returns random slap in gif
+            17)kick - returns random kick in gif
+            18)happy - returns random happy in gif
+            19)wink - returns random wink in gif
+            20)dance - returns random dance in gif
+            21)cringe - returns random cringe in gif
+        """
+        waifu = animec.Waifu()
+        m = discord.Embed(color=discord.Color.blue(),timestamp=ctx.message.created_at)
+        if query == 'random1':
+            m.set_image(url=waifu.random())
+            await ctx.channel.send(embed=m)
+        elif query == 'random gif':
+            m.set_image(url=waifu.random_gif())
+            await ctx.channel.send(embed=m)
+        elif query == 'random2':
+            m.set_image(url=waifu.waifu())
+            await ctx.channel.send(embed=m)
+        elif query == 'cuddle':
+            m.set_image(url=waifu.cuddle())
+            await ctx.channel.send(embed=m)
+        elif query == 'hug':
+            m.set_image(url=waifu.hug())
+            await ctx.channel.send(embed=m)
+        elif query == 'kiss':
+            m.set_image(url=waifu.kiss())
+            await ctx.channel.send(embed=m)
+        elif query == 'lick':
+            m.set_image(url=waifu.lick())
+            await ctx.channel.send(embed=m)
+        elif query == 'pat':
+            m.set_image(url=waifu.pat())
+            await ctx.channel.send(embed=m)
+        elif query == 'smug':
+            m.set_image(url=waifu.smug())
+            await ctx.channel.send(embed=m)
+        elif query == 'bonk':
+            m.set_image(url=waifu.bonk())
+            await ctx.channel.send(embed=m)
+        elif query == 'yeet':
+            m.set_image(url=waifu.yeet())
+            await ctx.channel.send(embed=m)
+        elif query == 'blush':
+            m.set_image(url=waifu.blush())
+            await ctx.channel.send(embed=m)
+        elif query == 'smile':
+            m.set_image(url=waifu.smile())
+            await ctx.channel.send(embed=m)
+        elif query == 'highfive':
+            m.set_image(url=waifu.highfive())
+            await ctx.channel.send(embed=m)
+        elif query == 'handhold':
+            m.set_image(url=waifu.handhold())
+            await ctx.channel.send(embed=m)
+        elif query == 'bite':
+            m.set_image(url=waifu.bite())
+            await ctx.channel.send(embed=m)
+        elif query == 'slap':
+            m.set_image(url=waifu.slap())
+            await ctx.channel.send(embed=m)
+        elif query == 'kick':
+            m.set_image(url=waifu.kick())
+            await ctx.channel.send(embed=m)
+        elif query == 'happy':
+            m.set_image(url=waifu.happy())
+            await ctx.channel.send(embed=m)
+        elif query == 'wink':
+            m.set_image(url=waifu.wink())
+            await ctx.channel.send(embed=m)
+        elif query == 'dance':
+            m.set_image(url=waifu.dance())
+            await ctx.channel.send(embed=m)
+        elif query == 'cringe':
+            m.set_image(url=waifu.cringe())
+            await ctx.channel.send(embed=m)
+        else:
+            await ctx.channel.send(embed=discord.Embed(description='Please enter correct value',color=discord.Color.red()))
+        
+
     # re zero
     @commands.command()
     async def rem(self,ctx):
