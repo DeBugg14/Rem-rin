@@ -107,8 +107,11 @@ class Anime(commands.Cog):
             m.set_image(url=waifu.hug())
             await ctx.channel.send(embed=m)
         elif query == 'kiss':
-            m.set_image(url=waifu.kiss())
-            await ctx.channel.send(embed=m)
+            if ctx.channel.is_nsfw():
+                m.set_image(url=waifu.kiss())
+                await ctx.channel.send(embed=m)
+            else:
+                await ctx.channel.send(embed = discord.Embed(description='Woah! this channels is not nsfw',color=discord.Color.red()),delete_after=5)
         elif query == 'lick':
             m.set_image(url=waifu.lick())
             await ctx.channel.send(embed=m)
